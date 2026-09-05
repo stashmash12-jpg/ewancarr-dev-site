@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: ewancarr-dev-site
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: false

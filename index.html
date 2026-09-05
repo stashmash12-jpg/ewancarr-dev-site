@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ewan Carr — Software Developer, Calgary</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0C0E12; --panel:#12151B; --line:#232833; --text:#EDEFF3; --muted:#8A93A3;
+    --teal:#3FD9C7; --amber:#F0B23E;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{ background:var(--bg); color:var(--text); font-family:'Inter'; -webkit-font-smoothing:antialiased;}
+  .display{ font-family:'Space Grotesk';}
+  .mono{ font-family:'JetBrains Mono';}
+  a{ color:inherit;}
+  .wrap{ max-width:920px; margin:0 auto; padding:0 32px;}
+
+  header{ padding:26px 0; border-bottom:1px solid var(--line);}
+  header .wrap{ display:flex; justify-content:space-between; align-items:center;}
+  .brand{ font-family:'Space Grotesk'; font-weight:700; font-size:18px;}
+  .brand span{ color:var(--teal);}
+  nav{ display:flex; gap:28px; font-size:13.5px; color:var(--muted);}
+
+  .hero{ padding:90px 0 70px; border-bottom:1px solid var(--line);}
+  .hero .tag{ font-family:'JetBrains Mono'; font-size:12.5px; color:var(--teal); letter-spacing:0.5px; margin-bottom:20px;}
+  .hero h1{ font-family:'Space Grotesk'; font-weight:700; font-size:46px; line-height:1.15; max-width:680px; margin-bottom:20px;}
+  .hero p{ color:var(--muted); font-size:16px; line-height:1.7; max-width:560px; margin-bottom:32px;}
+  .cta-row{ display:flex; gap:14px;}
+  .btn-primary{ background:var(--teal); color:#04211D; font-weight:600; font-size:14px; padding:14px 24px; border-radius:6px;}
+  .btn-secondary{ border:1px solid var(--line); color:var(--text); font-size:14px; padding:14px 24px; border-radius:6px;}
+
+  .section{ padding:60px 0; border-bottom:1px solid var(--line);}
+  .section h2{ font-family:'Space Grotesk'; font-size:24px; margin-bottom:8px;}
+  .section .sub{ color:var(--muted); font-size:14px; margin-bottom:36px;}
+
+  .case-study{ background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:32px;}
+  .case-study .kicker{ font-family:'JetBrains Mono'; color:var(--amber); font-size:12px; margin-bottom:10px;}
+  .case-study h3{ font-family:'Space Grotesk'; font-size:22px; margin-bottom:14px;}
+  .case-study p{ color:var(--muted); font-size:14.5px; line-height:1.7; margin-bottom:20px;}
+  .feature-list{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-bottom:20px;}
+  .feature-list div{ font-size:13.5px; color:var(--text); padding-left:16px; position:relative;}
+  .feature-list div::before{ content:"—"; position:absolute; left:0; color:var(--teal);}
+  .case-study .link{ color:var(--teal); font-size:13.5px; font-weight:500;}
+
+  .services-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:12px; overflow:hidden;}
+  .service-card{ background:var(--bg); padding:26px;}
+  .service-card h4{ font-family:'Space Grotesk'; font-size:16px; margin-bottom:8px;}
+  .service-card p{ color:var(--muted); font-size:13.5px; line-height:1.6;}
+
+  .how-list{ counter-reset:step;}
+  .how-item{ display:flex; gap:20px; padding:20px 0; border-bottom:1px solid var(--line);}
+  .how-item:last-child{ border-bottom:none;}
+  .how-num{ font-family:'JetBrains Mono'; color:var(--teal); font-size:14px; flex-shrink:0; width:24px;}
+  .how-item h4{ font-family:'Space Grotesk'; font-size:15.5px; margin-bottom:4px;}
+  .how-item p{ color:var(--muted); font-size:13.5px; line-height:1.6;}
+
+  .pricing-card{ background:var(--panel); border:1px solid var(--teal); border-radius:12px; padding:32px; max-width:420px;}
+  .pricing-card .badge{ display:inline-block; background:rgba(63,217,199,0.12); color:var(--teal); font-size:11.5px; font-weight:600; padding:4px 10px; border-radius:20px; margin-bottom:16px;}
+  .price-row{ display:flex; align-items:baseline; gap:10px; margin-bottom:6px;}
+  .price-row .amt{ font-family:'Space Grotesk'; font-size:34px; font-weight:700;}
+  .price-row .per{ color:var(--muted); font-size:13px;}
+  .price-line{ color:var(--muted); font-size:13.5px; margin-bottom:18px;}
+  .pricing-card ul{ list-style:none; margin-bottom:24px;}
+  .pricing-card li{ font-size:13.5px; padding:6px 0; color:var(--text);}
+  .pricing-card li::before{ content:"✓ "; color:var(--teal);}
+
+  footer{ padding:50px 0; text-align:center;}
+  footer .mono{ color:var(--muted); font-size:13px; margin-bottom:14px;}
+  footer .contact-line{ font-family:'Space Grotesk'; font-size:20px; margin-bottom:8px;}
+  footer a.email{ color:var(--teal);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">EWAN<span>CARR</span>.DEV</div>
+    <nav><a>Work</a><a>Services</a><a>Pricing</a><a>Contact</a></nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="tag">// SOFTWARE DEVELOPER — CALGARY, AB</div>
+    <h1>I build software that small businesses actually use every day.</h1>
+    <p>Not generic templates — real, working systems built around how your business actually runs. I handle the hosting, the maintenance, and the support, so you don't have to touch a thing.</p>
+    <div class="cta-row">
+      <a class="btn-primary">See a live demo</a>
+      <a class="btn-secondary">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Recent work</h2>
+    <div class="sub">A real project, live in production right now</div>
+    <div class="case-study">
+      <div class="kicker">CASE STUDY</div>
+      <h3>Rental &amp; Inventory Tracking System</h3>
+      <p>Built for a local equipment rental business, replacing a system of spreadsheets with one place to manage everything — inventory, clients, pricing, and payments.</p>
+      <div class="feature-list">
+        <div>Real-time inventory &amp; quantity tracking</div>
+        <div>Custom pricing per client</div>
+        <div>Online payments, delivery tracking</div>
+        <div>Dashboard, reporting, and data export</div>
+      </div>
+      <div class="link">Used daily by the business since launch →</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>What I build</h2>
+    <div class="sub">Whatever your business actually needs</div>
+    <div class="services-grid">
+      <div class="service-card"><h4>Custom Websites</h4><p>Sites built to actually generate leads, not just look nice.</p></div>
+      <div class="service-card"><h4>Internal Tools</h4><p>Inventory, booking, or client-tracking systems built for your workflow.</p></div>
+      <div class="service-card"><h4>Automation</h4><p>Cutting out manual processes that eat up your time.</p></div>
+      <div class="service-card"><h4>Online Presence</h4><p>Google Business setup, Google Ads management, and more.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <div class="sub">Simple, and fully managed on my end</div>
+    <div class="how-list">
+      <div class="how-item"><div class="how-num">01</div><div><h4>Live demo, no commitment</h4><p>See exactly what I can build before deciding on anything.</p></div></div>
+      <div class="how-item"><div class="how-num">02</div><div><h4>I build and set it up</h4><p>Your data, your workflow — I handle the technical side entirely.</p></div></div>
+      <div class="how-item"><div class="how-num">03</div><div><h4>I host and maintain it</h4><p>No server, no account, nothing technical for you to manage.</p></div></div>
+      <div class="how-item"><div class="how-num">04</div><div><h4>Issues fixed within 24 hours</h4><p>Reach out directly, and it's handled — no ticket queue.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Pricing</h2>
+    <div class="sub">Straightforward, no hidden costs</div>
+    <div class="pricing-card">
+      <div class="badge">FOUNDING CLIENT RATE</div>
+      <div class="price-row"><span class="amt">$299</span><span class="per">one-time setup</span></div>
+      <div class="price-row"><span class="amt">$75</span><span class="per">/ month</span></div>
+      <div class="price-line">Includes hosting, maintenance, and support</div>
+      <ul>
+        <li>Fully hosted, zero technical setup on your end</li>
+        <li>Ongoing maintenance and updates</li>
+        <li>Bugs and issues fixed within 24 hours</li>
+        <li>Custom packages available for larger needs</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="mono">// LET'S TALK</div>
+    <div class="contact-line">Ewan Carr</div>
+    <div class="mono">403-818-9160  ·  <a class="email" href="mailto:eacarr07@gmail.com">eacarr07@gmail.com</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
